@@ -1,18 +1,87 @@
 <html>
 	<head>
 		<script src="js/mail-generator.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<link href="css/style.css" rel="stylesheet" media="screen">
+		<title>GeeMail</title>
     <script>
       window.onload = function(){
+
+      	for(var x = 0; x < window.geemails.length; x++){
+      	
+      	document.getElementById("date").innerHTML = window.geemails[0].date;
+      	document.getElementById("subject").innerHTML = window.geemails[0].subject;
+      	document.getElementById("sender").innerHTML = window.geemails[0].sender;
+      
+
+      	$("button").click(function(){
+    		$(".body").toggle(document.getElementById("body").innerHTML = window.geemails[0].body);
+  }  		
+});
+
+      	document.getElementById("date1").innerHTML = window.geemails[1].date;
+      	document.getElementById("subject1").innerHTML = window.geemails[1].subject;
+      	document.getElementById("sender1").innerHTML = window.geemails[1].sender;
+      	
+$("button").click(function(){
+    		$(".body1").toggle(document.getElementById("body1").innerHTML = window.geemails[1].body);
+   });   	
+
+      	document.getElementById("date2").innerHTML = window.geemails[2].date;
+      	document.getElementById("subject2").innerHTML = window.geemails[2].subject;
+      	document.getElementById("sender2").innerHTML = window.geemails[2].sender;
+      	
+
+      	
+
+      	document.getElementById("date3").innerHTML = window.geemails[3].date;
+      	document.getElementById("subject3").innerHTML = window.geemails[3].subject;
+      	document.getElementById("sender3").innerHTML = window.geemails[3].sender;
+      	
+      	
+
+
+
+      		
+      }
+      	
+      	
+      	
+      	
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
         
-      };
+      
     </script>
 	</head>
 	<body>
+
+		<h1>GeeMail</h1>
 		<div class="container" id="main">
-			Build Me!
+			
+			<p>From: <span id = sender></span> Subject: <span id = subject></span> </span> Date: <span id = date></span>
+			<button class= 1>Read Message</button> 
+			<h4 id = body></h4>
+
+			<p>From: <span id = sender1></span> Subject: <span id = subject1></span> </span> Date: <span id = date1></span>
+			<button class = 2>Read Message</button> 
+			<h4 id = body1></h4>
+
+			<p>From: <span id = sender2></span> Subject: <span id = subject2></span> </span> Date: <span id = date2></span>
+			<button>Read Message</button> 
+			<h4 id = body2></h4>
+
+			<p>From: <span id = sender3></span> Subject: <span id = subject3></span> </span> Date: <span id = date3></span>
+			<button>Read Message</button> 
+			<h4 id = body3></h4>
+				
+		
+  
+	
+			
+			 
+			
 		</div>
 	</body>
+
 </html>
