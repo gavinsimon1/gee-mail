@@ -6,6 +6,7 @@
     <script>
       window.onload = function(){
 
+      		console.log(window.geemails[0])
 
 
       	for(var x = 0; x < window.geemails.length; x++){
@@ -33,7 +34,7 @@
       		inner.appendChild(message);
       		message.className = "message";
 
-      		message.addEventListener("click", show);
+      		main.addEventListener("click", show);
 
       		function show(){
       			var displayMessage = this.querySelector(".message");
@@ -43,6 +44,17 @@
       					displayMessage.style.display = "none";
       				}
       		}
+//function getNewMessage(){ var now = new Date(); return generateMessage(now); }
+      		//setInterval (function(){
+      			 var refresh =  document.createElement("div");
+      			 refresh.innerHTML = window.getNewMessage();
+      			 inner.appendChild(refresh);     			
+
+
+
+      		//}, 3000);
+
+
       		};
       	
 };
