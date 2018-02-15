@@ -8,46 +8,51 @@
 
       		console.log(window.geemails[0])
 
-      	//for (var x = 0; x < window.geemails.length; x++)
-      	
-
+        var count = document.createElement("div");
+        count.innerHTML = "YOU HAVE " + window.geemails.length + " MESSAGES";
+        document.body.appendChild(count);
+        count.className = "count"
 
       	for(var x = 0; x < window.geemails.length; x++){
 
 
       		var main = document.createElement("div");
       		document.body.appendChild(main);
+      		main.className = "main";
 
       		var inner = document.createElement("div");
       		main.appendChild(inner);
       		inner.className = "inner";
 
-
-
       		var date = document.createElement("div");
       		date.innerHTML = window.geemails[x].date;
       		inner.appendChild(date);
+      		date.className = "date";
 
       		var from = document.createElement("div");
-      		from.innerHTML = window.geemails[x].sender;
+      		from.innerHTML = "FROM: " + window.geemails[x].sender;
       		inner.appendChild(from);;
+      		from.className = "from";
 
       		var title = document.createElement("div");
-      		title.innerHTML = window.geemails[x].subject;
+      		title.innerHTML = "SUBJECT: " + window.geemails[x].subject;
       		inner.appendChild(title);
+      		title.className = "title";
 
 			var button = document.createElement("button");
       		button.innerHTML = "Read Message";
       		inner.appendChild(button);
       		button.className = "button";
 
-      		var message = document.createElement("p");
+      		var message = document.createElement("div");
       		message.innerHTML = window.geemails[x].body;
       		inner.appendChild(message);
       		message.className = "message";
 
+
+
       		{
-      		document.write("You Have" + window.geemails.length + "Messages");
+      		
       
       	}
 
@@ -57,13 +62,13 @@
 
       		function show(){
       		
-      			var displayMessage = document.querySelector("message");
+      			//var displayMessage = document.querySelector("message");
       				console.log(message);
-      			if (message.style.display === "none"){
-      					message.style.display = "block";
+      			if (message.style.display === "block"){
+      					message.style.display = "none";
 
       				} else {
-      				message.style.display = "none";
+      				message.style.display = "block";
       				}
 
       		}
@@ -106,7 +111,7 @@
 
 		<h1>GeeMail</h1>
 		
-		<div class = "date">
+		
 			
 		
   

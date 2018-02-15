@@ -1,0 +1,35 @@
+.count {
+	margin-bottom: 10px;
+}
+
+.main {
+	margin-bottom: 20px;
+}
+
+.date {
+	margin: 8px;
+}
+
+.from {
+	margin: 8px;
+}
+
+.title {
+	margin: 8px;
+}
+
+.button {
+	margin: 8px;
+
+}
+
+.message {
+	margin: 4px;
+	border-top-style: solid;
+	display: none;
+}
+
+.inner{
+	border-bottom-style: solid;
+}
+
