@@ -6,7 +6,7 @@
     <script>
       window.onload = function(){
 
-      		console.log(window.geemails[0])
+      		//console.log(window.geemails[0]);
 
         var count = document.createElement("div");
         count.innerHTML = "YOU HAVE " + window.geemails.length + " MESSAGES";
@@ -31,7 +31,7 @@
 
       		var from = document.createElement("div");
       		from.innerHTML = "FROM: " + window.geemails[x].sender;
-      		inner.appendChild(from);;
+      		inner.appendChild(from);
       		from.className = "from";
 
       		var title = document.createElement("div");
@@ -56,16 +56,16 @@
       
       	}
 
+      		
+
       		button.addEventListener("click", show);
 
+      		var show = function(){
       		
-
-      		function show(){
-      		
-      			//var displayMessage = document.querySelector("message");
-      				console.log(message);
-      			if (message.style.display === "block"){
-      					message.style.display = "none";
+      		//var displayMessage = getElementsByClassName("message");
+      				//console.log(displayMessage);
+                    if (message.style.display === "block"){
+      				message.style.display = "none";
 
       				} else {
       				message.style.display = "block";
@@ -74,20 +74,20 @@
       		}
 
       		
-//function getNewMessage(){ var now = new Date(); return generateMessage(now); }
-      		//setInterval (function(){
-      			// var refresh =  document.createElement("div");
-      			// refresh.innerHTML = window.getNewMessage();
-      			// inner.appendChild(refresh);     			
-
-
-
-      		//}, 3000);
-
-
-      		};
+      		//setInterval (function getNewMessage(){
       	
-};
+      		//window.geemails.push
+      	
+      		//count.innerHTML = "YOU HAVE " + getNewMessage.length + " MESSAGES"
+
+//}, 1000);
+      		
+
+ };
+ };     		
+ 
+  
+
 
      
       	
