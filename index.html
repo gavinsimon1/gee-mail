@@ -39,7 +39,7 @@
       		inner.appendChild(title);
       		title.className = "title";
 
-			var button = document.createElement("button");
+			   var button = document.createElement("button");
       		button.innerHTML = "Read Message";
       		inner.appendChild(button);
       		button.className = "button";
@@ -56,27 +56,38 @@
       
       	}
 
-      		button.addEventListener("click", show);
+      		
 
-      		var show = function(){
+         
+button.addEventListener("click", show);
 
-      	
-                    if (message.style.display === "none"){
-      				message.style.display = "block"
+     
+}
 
-      				} else {
-      				message.style.display = "none";
-      				}
+      		function show(){
+          var x = document.getElementsByClassName("message");
+      	   for (var i = 0; i < x.length; i++){
+
+              if (x[i].style.display === "none"){
+              x[i].style.display = "block"
+
+              } else {
+              x[i].style.display = "none";
+              }
+
+           }
+
+            
 
       		}
-
-      		//console.log(message);
+};
+      		
 
       		
       		
 
- };
- }; 
+ 
+
 
   		
   			
