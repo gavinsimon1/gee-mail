@@ -48,31 +48,27 @@
       		message.innerHTML = window.geemails[x].body;
       		inner.appendChild(message);
       		message.className = "message";
+          
+          console.log(show)     
+          button.addEventListener("click", show());
 
-
-
-      		{
-      		
-      
-      	}
-
-      		
-
-         
-button.addEventListener("click", show);
+    {
 
      
 }
 
-      		function show(){
-          var x = document.getElementsByClassName("message");
-      	   for (var i = 0; i < x.length; i++){
 
-              if (x[i].style.display === "none"){
-              x[i].style.display = "block"
+
+
+      	function show(){
+          var messageClass = document.getElementsByClassName("message");
+      	   for (var i = 0; i < messageClass.length; i++){
+
+              if (messageClass[i].style.display === "none"){
+              messageClass[i].style.display = "block"
 
               } else {
-              x[i].style.display = "none";
+              messageClass[i].style.display = "none";
               }
 
            }
@@ -117,7 +113,8 @@ addBody.innerHTML = window.getNewMessage().body;
 
  
  
- console.log(addSender)
+ console.log(addSender);
+}
 
  
 
