@@ -56,40 +56,61 @@
       
       	}
 
-      		
-
       		button.addEventListener("click", show);
 
       		var show = function(){
-      		
-      		//var displayMessage = getElementsByClassName("message");
-      				//console.log(displayMessage);
-                    if (message.style.display === "block"){
-      				message.style.display = "none";
+
+      	
+                    if (message.style.display === "none"){
+      				message.style.display = "block"
 
       				} else {
-      				message.style.display = "block";
+      				message.style.display = "none";
       				}
 
       		}
 
-      		
-      		//setInterval (function getNewMessage(){
-      	
-      		//window.geemails.push
-      	
-      		//count.innerHTML = "YOU HAVE " + getNewMessage.length + " MESSAGES"
+      		//console.log(message);
 
-//}, 1000);
+      		
       		
 
  };
- };     		
+ }; 
+
+  		
+  			
+
+  		
  
-  
+//setInterval (window.getNewMessage(), 5000);
+
+var addDate = document.createElement("p");
+var dateNode = document.createTextNode(window.getNewMessage().date)
+addDate.appendChild(dateNode);
+
+console.log(dateNode)
+ 
 
 
-     
+var addSender = document.createElement("p");
+addSender.innerHTML = window.getNewMessage().sender;
+
+
+var addSubject = document.createElement("p");
+addSubject.innerHTML = window.getNewMessage().subject;
+
+ 
+ var addBody = document.createElement("p");
+addBody.innerHTML = window.getNewMessage().body;
+
+ 
+ 
+ console.log(addSender)
+
+ 
+
+ 
       	
       	
 
@@ -110,6 +131,8 @@
 	<body>
 
 		<h1>GeeMail</h1>
+		<h3>Dev League Challenge</h3>
+		<h4>Gavin Simon</h4>
 		
 		
 			
