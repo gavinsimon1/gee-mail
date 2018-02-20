@@ -1,0 +1,9 @@
+.message {
+    height: 1em;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+*{
+	background-color: red;
+}
