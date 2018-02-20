@@ -59,6 +59,33 @@
             }
           })
 
+       
+          //setInterval (window.getNewMessage(), 5000);
+          /*getNewMessage()
+          window.geemails.push;*/
+          
+          
+          console.log(window.geemails.length);
+
+        addDate = document.createElement("div");
+         addDate.innerHTML = window.getNewMessage();
+         inner.appendChild(addDate);
+         addDate.className = "newDate";
+
+         
+        console.log(addDate);
+
+         /*function getNewMessage() {
+          window.geemails.push(message);
+          count.innerHTML = "YOU HAVE" + getNewMessage.length + "Messages";
+        };
+
+        getNewMessage();*/
+
+
+          //var addMessage = document.createElement("div");
+         // message.innerHTML = window.getNewMessage.date;
+
           /*newElem = document.getElementsByClassName("button");
           for(var i = 0; i < newElem.length; i++){
             newElem[i].addEventListener("click", show);
@@ -108,38 +135,32 @@
 };
 */          
           
-          
  
-      
-        
-      
- 
-//setInterval (window.getNewMessage(), 5000);
-/*var addDate = document.createElement("p");
+
+
+/*var addMessage = function(){
+var addDate = document.createElement("div");
 var dateNode = document.createTextNode(window.getNewMessage().date)
 addDate.appendChild(dateNode);
 console.log(dateNode)
  
-var addSender = document.createElement("p");
+var addSender = document.createElement("div");
 addSender.innerHTML = window.getNewMessage().sender;
-var addSubject = document.createElement("p");
+var addSubject = document.createElement("div");
 addSubject.innerHTML = window.getNewMessage().subject;
  
- var addBody = document.createElement("p");
-addBody.innerHTML = window.getNewMessage().body;*/
+ var addBody = document.createElement("div");
+addBody.innerHTML = window.getNewMessage().body;
  
  
- //console.log(addSender);
-//}
- 
- 
-        
-        
-          
+ console.log(addSender);
+
+*/
+
+    
+    //  }
+
       
-        
-        
-        
         
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
