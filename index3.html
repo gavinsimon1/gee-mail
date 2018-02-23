@@ -59,21 +59,91 @@
             }
           })
 
-       
-          //setInterval (window.getNewMessage(), 5000);
-          /*getNewMessage()
-          window.geemails.push;*/
-          
-          
-          console.log(window.geemails.length);
+         
+          function updateCount(){
+            window.geemails.push(getNewMessage());
+            var addCount = count;
+            addCount.innerHTML = "YOU HAVE " + window.geemails.length + " MESSAGES";
+            addCount.appendChild(count);
+            count.className = "count";
+          }
 
-        addDate = document.createElement("div");
-         addDate.innerHTML = window.getNewMessage();
-         inner.appendChild(addDate);
-         addDate.className = "newDate";
+          var messageInterval = setInterval (function messageRelease(){
+            coolBeans() }, 8000);
+
+
+          function coolBeans(){
+            
+
+            var inner = document.createElement("div");
+            main.appendChild(inner);
+            inner.className = "inner";
+
+            var addDate = document.createElement("div");
+            addDate.innerHTML = window.geemails[window.geemails.length - 1].date;
+            inner.appendChild(addDate);
+            addDate.className = "date";
+
+            var addFrom = document.createElement("div");
+            addFrom.innerHTML = "FROM: " + window.geemails[window.geemails.length - 1].sender;
+            inner.appendChild(addFrom);
+            addFrom.className = "from";
+
+            var addTitle = document.createElement("div");
+            addTitle.innerHTML = "SUBJECT: " + window.geemails[window.geemails.length-1].subject;
+            inner.appendChild(addTitle);
+            addTitle.className = "title";
+ 
+            var addMessage = document.createElement("div");
+            addMessage.innerHTML = window.geemails[window.geemails.length -1].body;
+            inner.appendChild(addMessage);
+            addMessage.className = "message";
+
+            $(".message").click(function(){
+            if($(this).hasClass("message")){
+              $(this).removeClass("message");
+            } else {
+              $(this).addClass("message");
+            }
+          })
+
+            updateCount();
+          
+          }
+
+
+          
+
+
+          //messageRelease();
+
+          
+         
+
+        
+
+          
 
          
-        console.log(addDate);
+
+
+
+          /*for(var i = 0; i < window.getNewMessage().length; i++){
+
+            var inner = document.createElement("div");
+            main.appendChild(inner);
+            inner.className = "inner";
+          
+            
+
+
+            
+}
+
+ console.log(window.getNewMessage.length);*/
+        
+
+
 
          /*function getNewMessage() {
           window.geemails.push(message);
@@ -183,6 +253,7 @@ addBody.innerHTML = window.getNewMessage().body;
        
       
     </div>
+ 
   </body>
 
 </html>
