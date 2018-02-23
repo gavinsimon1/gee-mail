@@ -1,14 +1,15 @@
 <html>
   <head>
     <script src="js/mail-generator.js"></script>
-    <link href="css/style.css" rel="stylesheet" media="screen">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="css/style1.css" rel="stylesheet" media="screen">
     <title>GeeMail</title>
     <script>
       window.onload = function(){
           //console.log(window.geemails[0]);
         var count = document.createElement("div");
         count.innerHTML = "YOU HAVE " + window.geemails.length + " MESSAGES";
-        document.body.appendChild(count);
+        main.appendChild(count);
         count.className = "count"
         
         for(var x = 0; x < window.geemails.length; x++){
@@ -36,50 +37,154 @@
           inner.appendChild(title);
           title.className = "title";
         
-         var button = document.createElement("button");
-          button.innerHTML = "Read Message";
-          inner.appendChild(button);
-          button.className = "button";
+         //var button = document.createElement("button");
+          //button.className = "button";
+          //button.innerHTML = "Read Message" 
+          //inner.appendChild(button);
+          
           
           var message = document.createElement("div");
           message.innerHTML = window.geemails[x].body;
           inner.appendChild(message);
           message.className = "message";
+          //message.style.display = "none";
+         
+          }
+
+          $(".message").click(function(){
+            if($(this).hasClass("message")){
+              $(this).removeClass("message");
+            } else {
+              $(this).addClass("message");
+            }
+          })
+
+         
+          function updateCount(){
+            window.geemails.push(getNewMessage());
+            var addCount = count;
+            addCount.innerHTML = "YOU HAVE " + window.geemails.length + " MESSAGES";
+            addCount.appendChild(count);
+            count.className = "count";
+          }
+
+          var messageInterval = setInterval (function messageRelease(){
+            coolBeans() }, 8000);
 
 
-          newElem = document.getElementsByClassName("button");
-          for(var i = 0; i < newElem.length; i++){
-
-            newElem[i].addEventListener("click", show);
+          function coolBeans(){
             
-            
+
+            var inner = document.createElement("div");
+            main.appendChild(inner);
+            inner.className = "inner";
+
+            var addDate = document.createElement("div");
+            addDate.innerHTML = window.geemails[window.geemails.length - 1].date;
+            inner.appendChild(addDate);
+            addDate.className = "date";
+
+            var addFrom = document.createElement("div");
+            addFrom.innerHTML = "FROM: " + window.geemails[window.geemails.length - 1].sender;
+            inner.appendChild(addFrom);
+            addFrom.className = "from";
+
+            var addTitle = document.createElement("div");
+            addTitle.innerHTML = "SUBJECT: " + window.geemails[window.geemails.length-1].subject;
+            inner.appendChild(addTitle);
+            addTitle.className = "title";
+ 
+            var addMessage = document.createElement("div");
+            addMessage.innerHTML = window.geemails[window.geemails.length -1].body;
+            inner.appendChild(addMessage);
+            addMessage.className = "message";
+
+            $(".message").click(function(){
+            if($(this).hasClass("message")){
+              $(this).removeClass("message");
+            } else {
+              $(this).addClass("message");
+            }
+          })
+
+            updateCount();
           
-
-            
           }
 
 
+          
 
-          function show(){
+
+          //messageRelease();
+
+          
+         
+
+        
+
+          
+
+         
+
+
+
+          /*for(var i = 0; i < window.getNewMessage().length; i++){
+
+            var inner = document.createElement("div");
+            main.appendChild(inner);
+            inner.className = "inner";
+          
             
 
-            var messageClass = document.querySelectorAll(".message")[0];
-            console.log(messageClass);
+
+            
+}
+
+ console.log(window.getNewMessage.length);*/
+        
+
+
+
+         /*function getNewMessage() {
+          window.geemails.push(message);
+          count.innerHTML = "YOU HAVE" + getNewMessage.length + "Messages";
+        };
+
+        getNewMessage();*/
+
+
+          //var addMessage = document.createElement("div");
+         // message.innerHTML = window.getNewMessage.date;
+
+          /*newElem = document.getElementsByClassName("button");
+          for(var i = 0; i < newElem.length; i++){
+            newElem[i].addEventListener("click", show);
+            //console.log(newElem[i]);
+            //console.log(show);
+            
+         }
+
+         function show(){
+            
+
+            var messageClass = this.querySelectorAll(".message")[0];
+            //console.log(messageClass);
 
 
             if(messageClass.style.display === "none"){
               messageClass.style.dislay = "block";
+              //console.log("test");
+            
               
 
             } else {messageClass.style.display = "none";
+            // console.log("test");
 
-
-         }
-         }
+         }*/
 
          
        }
-     }
+     //}
           
 /*          console.log(show)     
           button.addEventListener("click", show);
@@ -100,38 +205,32 @@
 };
 */          
           
-          
  
-      
-        
-      
- 
-//setInterval (window.getNewMessage(), 5000);
-/*var addDate = document.createElement("p");
+
+
+/*var addMessage = function(){
+var addDate = document.createElement("div");
 var dateNode = document.createTextNode(window.getNewMessage().date)
 addDate.appendChild(dateNode);
 console.log(dateNode)
  
-var addSender = document.createElement("p");
+var addSender = document.createElement("div");
 addSender.innerHTML = window.getNewMessage().sender;
-var addSubject = document.createElement("p");
+var addSubject = document.createElement("div");
 addSubject.innerHTML = window.getNewMessage().subject;
  
- var addBody = document.createElement("p");
-addBody.innerHTML = window.getNewMessage().body;*/
+ var addBody = document.createElement("div");
+addBody.innerHTML = window.getNewMessage().body;
  
  
- //console.log(addSender);
-//}
- 
- 
-        
-        
-          
+ console.log(addSender);
+
+*/
+
+    
+    //  }
+
       
-        
-        
-        
         
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
@@ -154,6 +253,7 @@ addBody.innerHTML = window.getNewMessage().body;*/
        
       
     </div>
+ 
   </body>
 
 </html>

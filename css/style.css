@@ -1,37 +1,39 @@
-.count {
-	margin-bottom: 10px;
-}
-
-.main {
-	margin-bottom: 20px;
-}
-
-.date {
-	margin: 8px;
-}
-
-.from {
-	margin: 8px;
-}
-
-.title {
-	margin: 8px;
-}
-
-.button {
-	margin: 8px;
-
-}
-
 .message {
-	margin: 4px;
-	border-top-style: solid;
+    height: 1em;
+    overflow: hidden;
+    cursor: pointer;
+    
+}
+
+.count{
+	font-size: 16px;
+	padding-bottom: 5px;
+}
+
+.date{
 	
+	padding-top: 10px;
+	padding-bottom: 5px;
 
+}
 
+.from{
+	padding-bottom: 5px;
+}
+
+.title{
+	padding-bottom: 5px;
 }
 
 .inner{
-	border-bottom-style: solid;
+	border: 5px solid black;
 }
+
+body{
+	background-color: #edf3fc;
+	font-family: arial;
+}
+
+
+
 
